@@ -1,0 +1,19 @@
+<!--views/search/searchResult/searchResult.wxml-->
+<view class="search-result-wrap">
+  <view class="book-result-wrap" wx:if="{{hasKeyBook}}">
+      <view class="title">相关书籍</view>
+      <view class="content-wrap">
+        <block wx:for="{{bookList}}">
+          <BookItem bookData="{{item}}" bookType="1" />
+        </block>
+      </view>
+      
+  </view>
+  <view class="story-result-wrap" wx:if="{{hasKeyStory}}">
+    <view class="title">相关故事</view>
+     <block wx:for="{{storyList}}">
+      <StoryItem storyData="{{item}}" />
+    </block>
+  </view>
+  <view class="tip" wx:if="{{!hasKeyBook && !hasKeyStory}}">抱歉，没有查询到相关信息，您可以换个关键词试试!</view>
+</view>

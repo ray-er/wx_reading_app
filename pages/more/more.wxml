@@ -1,0 +1,75 @@
+<!--pages/more/more.wxml-->
+<!-- <SearchBar /> -->
+<view class="more-wrap">
+  <VanTabs class="out-wrap" animated color="#440e25">
+    <VanTab title="书籍区">
+      <view class="book-wrap">
+        <!-- <view class="bar" show="{{flagShowBar}}" name="slide-left"> -->
+           <VanTreeSelect
+            items="{{ items }}"
+            main-active-index="{{ mainActiveIndex }}"
+            active-id="{{ activeId }}"
+            bind:click-nav="onClickNav"
+            bind:click-item="onClickItem"
+            class="bar"
+            style="left:{{_barLeft}}%!important;"
+          >
+          </VanTreeSelect>
+        <!-- </view> -->
+        <view class="content" style="width:{{_contentWidth}}%">
+          <view wx:if="{{mainActiveIndex==0}}">
+            <block wx:for="{{militaryList}}">
+              <BookItem bookData="{{item}}" />
+            </block>
+            
+          </view>
+          <view wx:if="{{mainActiveIndex==1}}">
+             <block wx:for="{{swordsmanList}}">
+              <BookItem bookData="{{item}}" />
+            </block>
+          </view>
+        </view>
+        <view class="showBar" bindtap="showBar">
+          <VanTransition show="{{flagShowBar}}" name="fade">
+            <VanIcon name="arrow-left" />
+          </VanTransition>
+           <VanTransition show="{{!flagShowBar}}" name="fade">
+            <VanIcon name="arrow" />
+          </VanTransition>
+        </view>
+      </view>
+      <!-- <VanTabs class="out-wrap" animated swipeable color="#440e25">
+        <VanTab title="推荐">
+          <BookItem   bookType="1"></BookItem>
+        </VanTab>
+        <VanTab title="分类">
+          <BookItem   bookType="2"></BookItem>
+        </VanTab>
+        <VanTab title="学习">
+          <BookItem   bookType="3"></BookItem>
+        </VanTab>
+      </VanTabs> -->
+    </VanTab>
+    <VanTab title="故事区">
+      <view class="story-wrap">
+        <block wx:for="{{storyList}}">
+            <StoryItem storyData="{{item}}"></StoryItem>
+        </block>
+      </view>
+    </VanTab>
+  </VanTabs>
+</view>
+
+   
+
+  <!-- <view slot="2">
+    <view class="story-wrap">
+      <block wx:for="{{storyList}}">
+          <StoryItem  bind:toStoryDetail="toStoryDetail" />
+      </block>
+      <view class="story-tip" wx-if="{{hasLoadedAll}}">
+        没有更多数据啦！
+      </view>
+    </view>
+  </view>
+ -->

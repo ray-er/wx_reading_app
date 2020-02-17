@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "NavPage":"../../components/NavPage/NavPage",
+    "BookItem":"../../components/BookItem/BookItem",
+    "StoryItem":"../../components/StoryItem/StoryItem",
+    "SearchBar":"../../components/SearchBar/SearchBar",
+    "VanSwipeCell":"../../vant-weapp/swipe-cell",
+    "VanButton":"../../vant-weapp/button",
+    "VanTab":"../../vant-weapp/tab",
+    "VanTabs":"../../vant-weapp/tabs",
+    "VanRow":"../../vant-weapp/row",
+    "VanCol":"../../vant-weapp/col"
+  }
+}

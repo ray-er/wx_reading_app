@@ -1,0 +1,92 @@
+/* components/Comment/Comment.wxss */
+.comment-wrap{
+  width: 100%;
+}
+.comment-title{
+  width: 100%;
+  padding: 20rpx 5% 20rpx 5%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  background-color: #f1f1f1;
+}
+.comment-title .left{
+  width: 50%;
+  height: 100%;
+  
+}
+.comment-title .left .text{
+  padding-left: 10rpx;
+  border-left: 8rpx solid #440e25;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.comment-title .right{
+  /* width: 50%; */
+  height: 40rpx;
+  display: flex;
+  
+}
+.comment-title .right .text{
+  height: 100%;
+  line-height: 40rpx;
+  padding-right: 5rpx;
+}
+.comment-content{
+  padding: 0 5%;
+}
+.comment-content .tip{
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  background-color: white;
+  font-size: 24rpx;
+  color: #999;
+}
+.comment-item{
+  display: flex;
+  padding: 10rpx;
+  min-height: 120rpx;
+}
+.comment-item .left{
+  width: 15%;
+  padding-right: 3% ;
+}
+.comment-item .left image{
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 4px;
+}
+.comment-item .right{
+  display: flex;
+  width: 85%;
+  flex-direction: column;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #999;
+}
+.comment-item .right .name{
+  padding: 5rpx 0 10rpx 0;
+  font-size: 22rpx;
+  color: #666;
+}
+.comment-item .right .time{
+  font-size: 18rpx;
+  color: #999;
+}
+.comment-item .right .comment-content{
+  font-size: 24rpx;
+  color: black;
+  line-height: 32rpx;
+}
+.comment-content .right .bottom{
+  display: flex;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.comment-input{
+  width: 100%;
+  border-top: 1rpx solid #440e25;
+}

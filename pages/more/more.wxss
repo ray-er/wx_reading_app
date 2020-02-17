@@ -1,0 +1,51 @@
+/* pages/more/more.wxss */
+.story-wrap{
+  width: 100%;
+  padding: 0 5%;
+  overflow-y: scroll;
+}
+.story-tip{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #888;
+}
+.more-wrap{
+  width: 100%;
+}
+.van-tree-select__nitem--active:after{
+  background-color: #440e25!important;
+}
+.book-wrap{
+  width: 100%;
+  height: calc(100vh - 88rpx);
+  position: relative;
+}
+.book-wrap .bar{
+  position: absolute;
+  left: 0;
+}
+.book-wrap .showBar{
+  position: absolute;
+  bottom: 20vh;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  background-color: rgba(68, 14, 37, .7);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.book-wrap .content{
+  position: absolute;
+  background-color: white;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  overflow-y: auto;
+  /* background-color: red; */
+}

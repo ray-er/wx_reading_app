@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "BookItem":"../../components/BookItem/BookItem",
+    "NavPage":"../../components/NavPage/NavPage",
+    "BottomTool":"../../components/BottomTool/BottomTool",
+    "MySwiper":"../../components/MySwiper/MySwiper",
+    "MyScrollBar":"../../components/MyScrollBar/MyScrollBar",
+    "SearchBar":"../../components/SearchBar/SearchBar"
+    
+  }
+}

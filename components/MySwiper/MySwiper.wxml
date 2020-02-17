@@ -1,0 +1,15 @@
+<view class='swiper-wrap'> 
+    <swiper class='swiper' 
+    indicator-dots="{{swiperConfig.indicatorDots}}" 
+    indicator-color="{{swiperConfig.indicatorColor}}" 
+    indicator-active-color="{{swiperConfig.indicatorAcitveColor}}" 
+    autoplay="{{swiperConfig.autoplay}}" 
+    interval='{{swiperConfig.interval}}' 
+    circular='{{swiperConfig.circular}}'>
+      <block wx:for="{{swiperConfig.imgList}}" wx:for-item="imgUrl" wx:key="*this">
+        <swiper-item catchtap='toDetail'>
+          <image class="swiper-img" src='{{imgUrl}}' mode='aspectFill' ></image>
+        </swiper-item>
+      </block>
+    </swiper>
+ </view>

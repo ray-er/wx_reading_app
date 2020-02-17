@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "VanButton":"../../../../vant-weapp/button",
+    "ImageCorpper":"../../../../components/ImageCropper/ImageCropper"
+  }
+}

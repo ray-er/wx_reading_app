@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/more/more",
+    "views/login/login",
+    "pages/store/store",
+    "views/story/storyContent/storyContent",
+    "pages/index/index",
+    "views/user/userEdit/userEdit",
+    "views/user/userEdit/userAvatar/userAvatar",
+    "views/book/bookContent/bookContent",
+    "pages/user/user",
+    "views/search/searchResult/searchResult",
+    "views/user/userSet/userSet",
+    "views/user/userSet/setAbout/setAbout",
+    "views/user/userSet/setHelp/setHelp"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#440e25",
+    "navigationBarTitleText": "读书app",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "selectedColor": "#440e25",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "./assets/tabBar/index0.png",
+        "selectedIconPath": "./assets/tabBar/index.png"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "更多",
+        "iconPath": "./assets/tabBar/more0.png",
+        "selectedIconPath": "./assets/tabBar/more.png"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "text": "收藏",
+        "iconPath": "./assets/tabBar/store0.png",
+        "selectedIconPath": "./assets/tabBar/store.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我",
+        "iconPath": "./assets/tabBar/user0.png",
+        "selectedIconPath": "./assets/tabBar/user.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

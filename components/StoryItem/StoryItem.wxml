@@ -1,0 +1,10 @@
+<!--components/StoryItem/StoryItem.wxml-->
+<view class="story-item" catchtap="_toStoryDetail">
+  <view class="left-box">
+    <view class="name"><VanTag type="danger" style="margin-right:10rpx">{{storyData.story_tag}}</VanTag>{{storyData.story_name}}</view>
+    <view class="source">  来源：{{storyData.story_source}}</view>
+  </view>
+  <view class="right-box">
+    <image src="{{storyData.story_coverImg}}" class="story-img"></image>
+  </view>
+</view>

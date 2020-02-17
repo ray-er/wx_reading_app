@@ -1,0 +1,114 @@
+/* components/BookItem/BookItem.wxss */
+.book-wrap{
+  width: 100%;
+  
+}
+.book-type1{
+  width: 100%;
+  padding: 20rpx 5%;
+  height: 200rpx;
+  display: flex;
+}
+.book-type1 .book-type1-left{
+  width: 120rpx;
+  height: 100%;
+  /* box-sizing: border-box; */
+}
+.book-type1-left .book1-img{
+  width: 100%;
+  height: 100%;
+}
+.book-type1 .book-type1-right{
+  width: calc(100% - 120rpx);
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 15rpx 20rpx;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.book-type1 .name{
+  display: -webkit-box; 
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #333;
+  font-size: 35rpx;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 4rpx;
+  font-weight: bold;
+}
+.book-type1 .author{
+  color: #444;
+  font-size: 25rpx;
+}
+.book-type1 .tip{
+  color: #aaa;
+  font-size: 22rpx;
+}
+
+.book-type2{
+  margin-top: 20rpx;
+  width: 180rpx;
+  height: 350rpx;
+}
+.book-type2 .book2-img{
+  width: 100%;
+  height: 70%;
+  box-shadow: 0 0 10rpx #999;
+  overflow: hidden;
+}
+.book-type2 .name{
+  width: 100%;
+  height: 30%;
+  line-height: 50rpx;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  display: -webkit-box; 
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-type3{
+  width: 50vw;
+  height: 180rpx;
+  display: flex;
+  padding: 20rpx 5%;
+}
+.book-type3 .book-type3-left{
+  width: 35%;
+  height: 100%;
+}
+.book-type3-left .book3-img{
+  width: 100%;
+  height: 100%;
+  border:2rpx solid #444;
+}
+.book-type3-right{
+  width: 65%;
+  padding: 10rpx 0 10rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.book-type3-right .name{
+  color: black;
+  font-size: 30rpx;
+  height: 64rpx;
+  line-height: 32rpx;
+  display: -webkit-box; 
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 2rpx;
+}
+.book-type3-right .author{
+  color: #999;
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+}

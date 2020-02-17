@@ -1,0 +1,9 @@
+<template name="ScrollBar">
+  <view class="srcoll-bar-wrap" catchtap="doNone">
+    <view class="scroll-bar">
+        <block wx:for="{{scrollBarList}}">
+          <view class="scroll-bar-item"></view>
+        </block>
+    </view>
+  </view>
+</template>

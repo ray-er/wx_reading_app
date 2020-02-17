@@ -1,0 +1,28 @@
+<!--components/BookItem/BookItem.wxml-->
+<view class="book-wrap"  bindtap="_toBookDetail" data-chapter_id="{{bookData.book_chapterID}}" data-book_id="{{bookData.book_id}}">
+  <view class="book-type1" wx-if="{{bookType==1}}">
+    <view class="book-type1-left">
+      <image src="{{bookData.book_coverImage}}" class="book1-img"></image>
+    </view>
+    <view class="book-type1-right">
+      <view class="name">{{bookData.book_name}}</view>
+      <view class="author">{{bookData.author}}</view>
+      <view class="tip">{{bookData.book_tip}}</view>
+    </view>
+  </view>
+  <view class="book-type2" wx-if="{{bookType==2}}">
+        <image src="{{bookData.book_coverImage}}" class="book2-img"></image>
+        <view class='name'>
+          {{bookData.book_name}}
+        </view>
+  </view>
+  <view class="book-type3" wx-if="{{bookType==3}}" >
+    <view class="book-type3-left">
+      <image class="book3-img" src="{{bookData.book_coverImage}}"></image>
+    </view>
+    <view class="book-type3-right">
+      <view class="name">{{bookData.book_name}}</view>
+      <view class="author">{{bookData.author}}</view>
+    </view>
+  </view>
+</view>

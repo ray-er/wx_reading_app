@@ -1,0 +1,6 @@
+.book-wrap{
+  padding-top: 100rpx;
+  height: calc(100vh - 300rpx);
+  overflow-y: scroll;
+  white-space: nowrap;
+}

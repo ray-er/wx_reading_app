@@ -1,0 +1,63 @@
+<!--views/user/userEdit/userEdit.wxml-->
+<view class="edit-wrap">
+  <VanCellGroup title="">
+    <VanField
+    value=""
+    center
+    clearable
+    label="头像"
+    readonly
+    border="{{ false }}"
+    use-button-slot
+    bindtap="chooseImage"
+  >
+    <view slot="button"  >
+      <image src="{{avatarUrl}}" class="avatar"></image>
+    </view>  
+  
+  </VanField>
+    <VanField
+      label="用户名"
+      value="{{ nickName }}"
+      placeholder="{{nickName}}"
+      border="{{ false }}"
+      bind:change="onChange"
+      bind:input="updateNickName"
+    />
+    <VanField
+      label="性别"
+      value="{{ gender }}"
+      placeholder="{ gender }}"
+      border="{{ false }}"
+      bind:change="onChange"
+      bind:input="updateGender"
+    />
+    <VanField
+      label="地址"
+      value="{{ address }}"
+      readonly
+      placeholder="{{ address }}"
+      border="{{ false }}"
+      bindtap="showAddressDialog"
+    />
+  </VanCellGroup>
+
+  <VanButton size="large" catchtap="severeMsg" plain>
+    保存信息
+  </VanButton>
+</view>
+
+<VanTransition show="{{flagShowArea}}" name="slide-up">
+  <VanArea 
+    bind:confirm="selectAddress"
+    bind:cancel="hideArea"
+    area-list="{{ areaList }}" 
+    columns-num="{{ 2 }}" 
+    title="选择地址"
+    value="110101"
+    columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}" />
+</VanTransition>
+  
+
+
+

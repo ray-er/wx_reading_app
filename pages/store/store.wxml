@@ -1,0 +1,39 @@
+<!--pages/store/store.wxml-->
+<!-- <SearchBar />
+<NavPage navItem="{{navItem}}" _top="100rpx">
+  <view slot="1">
+    <VanSwipeCell>
+      <BookItem bookType="1" />
+      <VanButton 
+      slot="right"
+      square
+      text="删除"
+      type="danger" />
+    
+    </VanSwipeCell>
+  </view>
+  <view slot="2">111</view>
+</NavPage> -->
+<view class="store-wrap">
+  <VanTabs animated type="card" swipeable color="#440e25" >
+    <VanTab title="我的书架">
+      <view class="book-wrap">
+        
+          <block wx:for="{{storeBooks}}">
+            <view style="width:33.3%">
+              <BookItem bookData="{{item}}" bookType="2" />
+            </view>
+          </block>
+       
+        
+      </view>
+    </VanTab>
+    <VanTab title="故事区">
+      <view class="story-wrap">
+        <block wx:for="{{storeStorys}}">
+          <StoryItem storyData="{{item}}"></StoryItem>
+        </block>
+      </view>
+    </VanTab>
+  </VanTabs>
+</view>

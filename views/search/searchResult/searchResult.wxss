@@ -1,0 +1,13 @@
+/* views/search/searchResult/searchResult.wxss */
+.search-result-wrap{
+  width: 100%;
+  padding: 0 5%;
+}
+.title{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin:10rpx 0;
+  border-left: 2vw solid #440e25;
+  padding-left: 30rpx;
+}

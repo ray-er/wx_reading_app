@@ -1,0 +1,9 @@
+/* views/user/userSet/userSet.wxss */
+.set-wrap{
+  padding-bottom: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}

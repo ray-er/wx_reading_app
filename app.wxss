@@ -1,0 +1,18 @@
+/**app.wxss**/
+@import "src/css/animate.wxss";
+
+view{
+  box-sizing: border-box;
+  transition: all ease .3s;
+}
+.line-style{
+  display: -webkit-box; 
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.common-wrap{
+  width: 100%;
+  padding: 0 5%;
+}

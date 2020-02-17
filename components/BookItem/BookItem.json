@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "VanSwipeCell":"../../vant-weapp/swipe-cell",
+    "VanButton":"../../vant-weapp/button"
+  }
+}

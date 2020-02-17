@@ -1,0 +1,100 @@
+/* components/SearchBar/SearchBar.wxss */
+.search-wrap{
+  width: 100vw;
+  height: 100rpx;
+  position: fixed;
+  background-color: #fff;
+}
+.search-btn-wrap{
+  width: 15vw;
+  height: 100%;
+  position: absolute;
+  left: -15vw;
+  padding:0 10rpx ;
+  overflow: hidden;
+  font-size: 24rpx;
+}
+.search-btn-wrap .search-btn{
+  width: 13vw;
+  height: 50rpx;
+  line-height: 50rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  text-align: center;
+  letter-spacing: 4rpx;
+  background-color: #440e25;
+  border-radius: 15rpx;
+  color: white;
+}
+.search-container{
+  width: 100vw;
+  height: 100%;
+  padding: 20rpx 5%;
+  right: 0;
+  position: absolute;
+}
+
+.search-container .search-icon{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  left: calc(5% + 15rpx);
+  top: 50%;
+  transform: translateY(-50%)
+}
+.search-container .search-input{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 60rpx;
+  font-size: 28rpx;
+  height: 100%;
+  outline: none;
+  background-color: #f1f1f1;
+  border-radius: 30rpx;
+  box-shadow: 2rpx 2rpx 5rpx #888;
+  /* 修改光标颜色 */
+  caret-color:#028ffa;
+}
+
+.search-history{
+  position: absolute;
+  float: left;
+  z-index: 999;
+  top: 100rpx;
+  height: calc(100vh - 100rpx);
+  width: 100%;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  padding: 0 5%;
+}
+/* 60 */
+.search-history .history-title{
+  font-size: 22rpx;
+  color: #999;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.search-history .history-content{
+  width: 100%;
+  padding: 0 5%;
+  height: calc(100vh - 260rpx);
+  overflow-x: scroll;
+  transition: all ease .8s;
+}
+.history-content .history-item{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #aaa;
+}
+/* 100 */
+.search-history .history-clear{
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  color: #666;
+  letter-spacing: 4rpx;
+}

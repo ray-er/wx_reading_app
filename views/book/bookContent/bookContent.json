@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "BottomTool":"../../../components/BottomTool/BottomTool",
+    "VanDialog":"../../../vant-weapp/dialog",
+    "VanSlider":"../../../vant-weapp/slider",
+    "VanButton":"../../../vant-weapp/button",
+    "VanTransition":"../../../vant-weapp/transition",
+    "VanIcon":"../../../vant-weapp/icon"
+  }
+}

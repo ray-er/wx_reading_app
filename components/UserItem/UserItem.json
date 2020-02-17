@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "VanCell":"../../vant-weapp/cell",
+    "VanSwipeCell":"../../vant-weapp/swipe-cell",
+    "VanCellGroup":"../../vant-weapp/cell-group"
+  }
+}

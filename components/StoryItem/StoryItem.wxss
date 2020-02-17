@@ -1,0 +1,42 @@
+/* components/StoryItem/StoryItem.wxss */
+.story-item{
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  padding-top: 10rpx;
+}
+.story-item .left-box{
+  width: 80%;
+  height: 100%;
+  box-sizing: border-box;
+  padding:0 40rpx 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.left-box .name{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  width: 100%;
+  height: 80rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  letter-spacing:2rpx;
+  /* font-weight: 600; */
+}
+.left-box .source{
+  color: #aaa;
+  font-size: 24rpx;
+}
+.story-item .right-box{
+  /* display: flex; */
+}
+.right-box .story-img{
+  width: 180rpx;
+  height: 120rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 5rpx;
+}

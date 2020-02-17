@@ -1,0 +1,38 @@
+<!--components/BottomTool/BottomTool.wxml-->
+<view class="tool-wrap">
+  <view class="tool-container">
+    <view class="catalog" catchtap="showCatalog">
+      <image src="../../assets/bottomTool/catalog.png" class="tool-img"></image>
+      <text>目录</text>
+    </view>
+    <view class="set" catchtap="showSet">
+      <image src="../../assets/bottomTool/setting.png" class="tool-img"></image>
+      <text>设置</text>
+    </view>
+    <view class="store">
+      <view class="add-book" wx:if="{{!hasAdd}}" bindtap="addBook">
+        <image src="../../assets/bottomTool/book1.png" class="tool-img"></image>
+        <text>加入书架</text>
+      </view>
+       <view class="remove-book" wx:else bindtap="removeBook">
+          <image src="../../assets/bottomTool/book.png" class="tool-img"></image>
+          <view>已加入书架</view>
+       </view>
+    </view>
+  </view>
+    <!-- 遮罩 -->
+  <view class='mask {{flagShowCatalog||flagShowSet?"rightToLeft":""}}'>
+     <!-- 显示的拓展工具 -->
+      <view class="tool-helper">
+        <view class="catalog {{flagShowCatalog?'catalogShow':''}}">
+          <slot name="catalog"></slot>
+        </view>
+        <view class="set  {{flagShowSet?'setShow':''}}" >
+          <slot name="set"></slot>
+        </view>
+      </view>
+  </view>
+ 
+</view>
+<!-- 对话框 -->
+<VanDialog id="dialogRemove" />

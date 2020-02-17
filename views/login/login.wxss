@@ -1,0 +1,14 @@
+/* pages/login/login.wxss */
+.login-wrap{
+  width: 100%;
+  height: 100vh;
+}
+.login-cover{
+  width: 100%;
+  height: 80vh;
+}
+.login-button{
+  width: 100%;
+  height: 20vh;
+  padding: 5%;
+}

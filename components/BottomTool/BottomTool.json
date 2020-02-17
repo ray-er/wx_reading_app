@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "VanSlider":"../../vant-weapp/slider",
+    "VanDialog":"../../vant-weapp/dialog"
+  }
+}

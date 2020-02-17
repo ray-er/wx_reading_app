@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class="login-wrap">
+  <view class="login-container">
+    <view class="login-cover">
+      
+    </view>
+    <view class="login-button">
+      <VanButton size="large" color="#440e25" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">登录</VanButton>
+    </view>
+  </view>
+</view>

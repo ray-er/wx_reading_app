@@ -1,0 +1,8 @@
+/* views/user/userEdit/userEdit.wxss */
+/* .area-wrap{
+  height: 50vh;
+} */
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+}

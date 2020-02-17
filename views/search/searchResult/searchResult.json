@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "BookItem":"../../../components/BookItem/BookItem",
+    "StoryItem":"../../../components/StoryItem/StoryItem"
+  },
+  "navigationBarTitleText": "搜索结果"
+}

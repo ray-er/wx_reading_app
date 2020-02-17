@@ -1,0 +1,14 @@
+/* pages/store/store.wxss */
+.store-wrap{
+  width: 100%;
+}
+.book-wrap{
+  padding:  0 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 100vh; */
+}
+.store-wrap{
+  padding-top: 20rpx;
+  height: 100vh;
+}

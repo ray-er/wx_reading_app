@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "Comment":"../../../components/Comment/Comment"
+  }
+}

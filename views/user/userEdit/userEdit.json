@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "VanCellGroup":"../../../vant-weapp/cell-group",
+    "VanCell":"../../../vant-weapp/cell",
+    "VanField":"../../../vant-weapp/field",
+    "VanButton":"../../../vant-weapp/button",
+    "VanArea":"../../../vant-weapp/area",
+    "VanTransition":"../../../vant-weapp/transition"
+  }
+}

@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="index-wrap">
+  <MySwiper _swiperConfig="{{swiperConfig}}"/>
+  <SearchBar _top="300" />
+  <view class="book-wrap">
+    <block wx:for="{{books}}">
+      <BookItem bookType="1" bookData="{{item}}" />
+    </block>
+  </view>
+</view>

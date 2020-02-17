@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "NavPage":"../../components/NavPage/NavPage",
+    "BookItem":"../../components/BookItem/BookItem",
+    "StoryItem":"../../components/StoryItem/StoryItem",
+    "SearchBar":"../../components/SearchBar/SearchBar",
+    "VanButton":"../../vant-weapp/button",
+    "VanTab":"../../vant-weapp/tab",
+    "VanTabs":"../../vant-weapp/tabs",
+    "VanTreeSelect":"../../vant-weapp/tree-select",
+    "VanTransition":"../../vant-weapp/transition",
+    "VanIcon":"../../vant-weapp/icon"
+  }
+}

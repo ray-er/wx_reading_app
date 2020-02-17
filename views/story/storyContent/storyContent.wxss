@@ -1,0 +1,35 @@
+/* views/story/storyContent/storyContent.wxss */
+.story-content-wrap{
+  padding: 0 5%;
+  background-color: white;
+}
+.story-content-wrap .name{
+  width: 100%;
+  font-size:35rpx;
+  letter-spacing: 3rpx;
+  font-weight: bold;
+  padding: 30rpx 0;
+}
+.story-content-wrap .source{
+  color: #aaa;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+}
+.story-content-wrap .content{
+  padding: 30rpx 0;
+}
+.content .content-img{
+  width: 100%;
+  height: 350rpx;
+  padding-bottom: 15rpx;
+}
+.content-img .img{
+  width: 100%;
+  height: 100%;
+}
+/* .content-paragraphs{
+
+} */
+.content-paragraphs .paragraph{
+  padding: 20rpx 0;
+}

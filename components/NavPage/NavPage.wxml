@@ -1,0 +1,20 @@
+<view class="top-navbar-page"  bindtouchstart="touchstart" bindtouchend="touchend" bindtouchmove='touchMove' style="padding-top:{{_top}}">
+  <view class="navbar" >
+    <text
+      wx:for="{{navItem}}"
+      wx:key="*this"
+      data-index="{{index}}"
+      class="navbar-item {{index===activeItem? 'active' : ''}}"
+      catchtap="eNavItem">{{item.name}}</text>
+  </view>
+  <view class="page-content">
+    <block wx:for="{{navItem}}" wx:key="*this">
+      <view
+        wx:if="{{activeItem===index}}"
+        class="{{scrollerDirection===1? 'scrollerRig':'scrollerLeft'}}">
+        <slot name="{{index+1}}"></slot>
+      </view>
+    </block>
+  </view>
+</view>
+

@@ -1,0 +1,12 @@
+<!--components/UserItem/UserItem.wxml-->
+<!-- <VanSwipeCell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose">
+  <view slot="left">选择</view>
+  <VanCellGroup>
+    <VanCell title="单元格" value="内容" />
+  </VanCellGroup>
+  <view slot="right">删除</view>
+</VanSwipeCell> -->
+<VanCellGroup>
+  <VanCell title="{{_title}}" value="{{_value}}" wx:if="{{hasLabel}}" size="large"/>
+  <VanCell title="{{_title}}" value="{{_value}}" wx:else label="{{_labelMsg}}" size="large"  />
+</VanCellGroup>

@@ -1,0 +1,19 @@
+/* pages/user/user.wxss */
+@import "../../templates/ScrollBar/ScrollBar.wxss";
+page{
+  background-color: rgb(247,248,250);
+}
+.avator-wrap{
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+.avator{
+  border: 1rpx solid #666;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}

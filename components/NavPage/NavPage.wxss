@@ -1,0 +1,77 @@
+/* components/TopNavPage/TopNavPage.wxss */
+.top-navbar-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  position: static;
+  z-index: -1;
+  background-color: #fff;
+}
+
+.navbar .navbar-item {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 20rpx 15rpx;
+  position: relative;
+  color: rgb(204, 196, 196);
+  font-weight: 900;
+}
+
+.navbar .navbar-item::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 0;
+  height: 4px;
+  background-color: #139eeb;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  border-radius: 240px;
+  transition: all ease-in-out 200ms
+}
+
+.navbar .navbar-item.active {
+  font-size: 20px;
+  color: #333;
+  font-weight: 900;
+}
+
+.navbar .navbar-item.active::before {
+  width: 20% !important;
+}
+
+.page-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+
+.scrollerLeft {
+  animation: loadPageLeftToRig ease-in-out 200ms
+}
+
+.scrollerRig {
+  animation: loadPageRigToLeft ease-in-out 200ms
+}
+
+@keyframes loadPageLeftToRig {
+  from {
+    transform: translateX(100%)
+  }
+  to {
+    transform: translateX(0)
+  }
+}
+
+@keyframes loadPageRigToLeft {
+  from {
+    transform: translateX(-100%)
+  }
+  to {
+    transform: translateX(0)
+  }
+}

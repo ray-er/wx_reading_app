@@ -1,0 +1,12 @@
+<!--views/user/userEdit/userAvatar/userAvatar.wxml-->
+
+
+<view class="avatar-wrap">
+  <view class="btn-wrap">
+    <VanButton color="#440e25" type="info" bindtap="cancelChoose" size="mini">取消</VanButton>
+    <view bindtap="chooseImage">重新选择</view>
+    <VanButton color="#440e25" type="info" bindtap="confirmChoose" size="mini">确定</VanButton>
+  </view>
+  <ImageCorpper id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut">
+  </ImageCorpper>
+</view>

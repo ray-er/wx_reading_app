@@ -1,0 +1,95 @@
+<!--views/book/bookContent/bookContent.wxml-->
+
+<view  class="book-describe-wrap {{content_id===0||flagShowDesc?'showDesc':''}}" >
+    <view class="content-describe-wrap" >
+    <view class="content-describe">
+      <view class="describe-top">
+        <image src="{{bookData.book_coverImage}}" class="cover-img"></image>
+        <view class="name">{{bookData.book_name}}</view>
+        <view class="author">{{bookData.author}}</view>
+      </view>
+      <view class="describe-bottom">
+        <view class="text">简介</view>
+        <view class="introduction" bindtap="showIntroDialog">
+          {{bookData.book_introduction}}
+        </view>
+        <!-- van 组件 -->
+       
+        <VanButton catchtap="startReading" size="large" 
+        style="width:100%"
+        color="#440e25"
+        type="info" block>开始阅读</VanButton>
+        <!-- <view class="btn" bindtap="startReading">开始阅读</view> -->
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 对话框 -->
+<VanDialog id="dialogDesc" />
+
+<view class="book-content-wrap" bindtouchstart="touchstart" bindtouchend="touchend" bindtouchmove='touchMove' wx:if="{{content_id>0&&!flagShowDesc}}">
+  <view class="scroll-to-top" bindtap="scrollToTop">
+    <VanIcon name="arrow-up" color="white" />
+  </view>
+  <view class="content-page">
+    <view class="content-container">
+      <view class="prev-btn" bindtap="toPrevChapter">上一章</view>
+      <view class="chapter">
+        <view class="chapter-id">第{{content_id}}章</view>
+        <view class="chapter-name">{{chapter_name}}</view>
+        <view class="chapater-content">
+          <block wx:for="{{paragraphs}}" wx:key="{{index}}">
+              <view class="paragraph" style="font-size:{{fontSize + 'rpx'}}">
+                  <text decode="{{true}}">&emsp;&emsp;{{item}}</text>
+              </view>
+          </block>
+        </view>
+      </view>
+      <VanButton type="info" bindtap="toNextChapter" size="large" block 
+      wx:if="{{chapterListLength>content_id}}" color="#440e25">下一章</VanButton>
+      <view wx:else class="text-msg">恭喜您读完本书~</view>
+    </view>
+  </view>
+</view>
+<BottomTool wx:if="{{content_id > 0&&!flagShowDesc}}" id="bottomTool" flagShowCatalog="{{flagShowCatalog}}" flagShowSet="{{flagShowSet}}" book_id="{{bookData.book_id}}"> 
+  <view slot="catalog" >
+     <view class="catalog-wrap" >
+       <view class="title">目录</view>
+       <view class="catalog-list">
+        <block wx:for="{{chapterList}}" wx:key="*this">
+          <view class="catalog-list-item" bindtap="toPointChapter"
+            data-chapterIndex="{{index+1}}"> 
+            <view class="chapter-index">{{index+1}}.</view> 
+            <view class="chapter-name">{{item.chapter_name}}</view>
+          </view>
+        </block>
+       </view>
+     </view>
+    </view>
+    <view slot="set" > 
+      <view class="set-wrap">
+        <view class="title">设置</view>
+        <view class="set-container">
+          <text class="small-font">A</text>
+          <!-- <view class="progress-box" catchtap="changeFontSize">
+            <view class="progress">
+              <view class="dot" style="left:{{dotLeft+'%'}}"></view>
+            </view>
+          </view> -->
+          <view class="progress-box">
+              <VanSlider
+              min="0"
+              max="100"
+              data-value="value"
+              value="{{sliderValue}}"
+              bind:change="changeFontSize"
+              bar-height="4px"
+              active-color="#440e25"
+          />
+          </view>
+        
+          <text class="big-font">A</text>
+        </view>
+      </view>
+    </view>
+  </BottomTool>

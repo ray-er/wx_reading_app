@@ -1,0 +1,18 @@
+<!--views/story/storyContent/storyContent.wxml-->
+<view class="story-content-wrap">
+  <view class="name">{{storyData.story_name}}</view>
+  <view class="source">{{storyData.story_source}}</view>
+  <view class="content">
+    <view class="content-img">
+      <image src="{{storyData.story_coverImg}}" class="img"></image>
+    </view>
+    <view class="content-paragraphs">
+       <block wx:for="{{storyData.paragraphs}}" wx:key="*this">
+        <view class="paragraph"> <text decode="{{true}}">&emsp;&emsp;{{item}}</text></view>
+      </block>
+    </view>
+  </view>
+</view>
+<view>
+  <Comment story_id="{{story_id}}" commentList="{{commentList}}" bind:getComments="refreshComment" />
+</view>

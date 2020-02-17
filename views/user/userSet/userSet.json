@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "VanCellGroup":"../../../vant-weapp/cell-group",
+    "VanButton":"../../../vant-weapp/button",
+    "VanCell":"../../../vant-weapp/cell"
+  }
+}

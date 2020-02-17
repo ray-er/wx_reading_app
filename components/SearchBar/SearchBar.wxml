@@ -1,0 +1,22 @@
+<view class="search-wrap">
+   <view class="search-btn-wrap" style="left:{{_btnLeft}}">
+      <view class="search-btn" catchtap="searchByKey" data-keyword="{{keyword}}">搜索</view>
+    </view>
+  <view class="search-container"  style="width:{{_searchBarWidth}}">
+    <image class="search-icon" src="../../assets/icons/search.png"></image>
+    <input type="text" class="search-input" bindinput="getKey" bindfocus="focusWidth" bindblur="blurWidth" placeholder="{{_placeholder}}"></input>
+  </view>
+  <view class="search-history" style="height:{{_searchHistoryHeight}}">
+   <!-- <view class="search-history" style="height:100vh"> -->
+    <view class="history-title">搜索历史</view>
+    <view class="history-content" style="height:{{_historyContentHeight}}">
+      <block wx:for="{{searchHistoryWords}}">
+        <view class="history-item" catchtap="searchByKey" data-keyword="{{item}}">
+          {{item}}
+        </view>
+      </block>
+    </view>
+    <view class="history-clear" catchtap="clearHistory" wx:if="{{hasHisory}}">清空搜索历史</view>
+    <view class="history-clear"  wx:else>暂无搜索历史</view>
+  </view>
+</view>
