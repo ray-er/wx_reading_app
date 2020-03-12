@@ -1,7 +1,13 @@
 <!--views/story/storyContent/storyContent.wxml-->
 <view class="story-content-wrap">
   <view class="name">{{storyData.story_name}}</view>
-  <view class="source">{{storyData.story_source}}</view>
+  <view class="source">
+     <view>{{storyData.story_source}}</view> 
+     <view class="source-right">
+     <VanIcon name="star-o" color="#E3CF57" size="50rpx" wx:if="{{!hasStore}}" bind:click="addStory" />
+     <VanIcon name="star" color="#E3CF57" size="50rpx" bind:click="removeStory" wx:else />
+     点击收藏</view>
+  </view>
   <view class="content">
     <view class="content-img">
       <image src="{{storyData.story_coverImg}}" class="img"></image>
@@ -16,3 +22,7 @@
 <view>
   <Comment story_id="{{story_id}}" commentList="{{commentList}}" bind:getComments="refreshComment" />
 </view>
+<Dialog id="dialogRemove" />
+<Toast id="toastRemoveInfo" />
+<Toast id="toastAddInfo" />
+<!-- <StoryBottomTool /> -->

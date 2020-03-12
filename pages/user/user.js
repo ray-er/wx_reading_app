@@ -7,12 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    scrollBarList:[1,2,3],
     noticeContent:"请广大市民务必勤洗手，戴口罩，减少出门。武汉加油！！！",
-    nickName:'30',
-    gender:"男",
-    avatarUrl:'https://img.yzcdn.cn/vant/cat.jpeg',
-    address:"中国广东"
+    nickName:'',
+    gender:'',
+    avatarUrl:'',
+    city:'',
+    province:''
   },
 
   /**
@@ -24,7 +24,6 @@ Page({
     })
   },
   toSetPage(){
-    console.log(123)
     wx.navigateTo({
       url: '../../views/user/userSet/userSet'
     })
@@ -40,17 +39,14 @@ Page({
   },
   onLoad: async function (options) {
     let userInfo = await this._getUserInfo();
-    let {gender,nickName,avatarUrl} = userInfo
+    let {gender,nickName,avatarUrl,city,province} = userInfo
     gender= (gender==1)?'男':'女'
-
+    console.log(userInfo)
     this.setData({
-      avatarUrl:avatarUrl,
-      gender:gender,
-      nickName:nickName
+      avatarUrl,gender,nickName,
+      city,province
     })
   },
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

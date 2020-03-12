@@ -1,0 +1,70 @@
+/* components/StoryBottomTool/StoryBottomTool.wxss */
+/* 工具栏 */
+.tool-wrap{
+  width: 100%;
+  height: 80rpx;
+  padding: 20rpx 5% 0;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 2rpx solid #ccc;
+}
+.left,.right{
+  display: flex;
+}
+.right .comment{
+  margin-left:40rpx ;
+  display: flex;
+  flex-direction: column;
+  width: 40rpx;
+  text-align: center;
+  font-size: 20rpx;
+}
+/* 评论盒子 */
+.comment-wrap{
+  width: 100%;
+  height: 92vh;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.comment-title{
+  width: 100%;
+  padding: 20rpx 5% 20rpx 5%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  background-color: #f1f1f1;
+}
+.comment-title .left{
+  width: 50%;
+  height: 100%;
+  
+}
+.comment-title .left .text{
+  padding-left: 10rpx;
+  border-left: 8rpx solid #440e25;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.comment-title .right{
+  /* width: 50%; */
+  height: 40rpx;
+  display: flex;
+  
+}
+.comment-title .right .text{
+  height: 100%;
+  line-height: 40rpx;
+  padding-right: 5rpx;
+}
+.comment-title .right .img{
+  width:36rpx;
+  height:36rpx;
+  position: relative;
+  top: 4rpx;
+}

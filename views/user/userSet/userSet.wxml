@@ -2,8 +2,8 @@
 <view class="set-wrap">
   <VanCellGroup title="设置">
     <VanCell title="关于读书app" value=""  size="large" 
-          bind:click="toAboutPage" />
-    <VanCell title="帮助与反馈" value="" size="large"    bind:click="toHelpPage" />
+          bind:click="toAboutPage" icon="expand-o" is-link />
+    <VanCell title="帮助与反馈" value="" size="large"  is-link icon="service-o"  bind:click="toHelpPage" />
   </VanCellGroup>
   <view class="common-wrap">
     <VanButton bindtap="logout" color="#440e25" size="large" plain type="danger">退出登录</VanButton>

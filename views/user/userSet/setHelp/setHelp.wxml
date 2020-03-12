@@ -1,2 +1,41 @@
-<!--views/user/userSet/setHelp/setHelp.wxml-->
-<text>views/user/userSet/setHelp/setHelp.wxml</text>
+<van-transition show="{{ show }}" custom-class="block" name="slide-right">
+ <view class="a-wrap">
+    <view class="back">
+      <van-icon name="arrow-left" size="20px" bind:click="hideAnswer" />
+    </view>
+    <view class="van-hairline--bottom title">
+      <van-icon name="{{iconName}}" size="40rpx" />
+      <view class="van-cell-text" >{{answerTitle}}</view>
+    </view> 
+    <view class="a-process">
+      <van-steps
+        style="z-index:10000"
+        steps="{{ steps }}"
+        active="{{ active }}"
+        direction="vertical"
+        active-color="#ee0a24"
+      />
+    </view>
+    <van-divider contentPosition="center">{{bottomText}}</van-divider>
+ </view>
+</van-transition>
+<view class="q-wrap">
+  <VanCellGroup title="热点问题">
+    <block wx:for="{{questions}}"  wx:key="id" wx:for-item="question">
+      <VanCell is-link  icon="question-o" size="large" data-id="{{question.id}}" bind:click="showAnswer">
+        <view slot="title">
+            <view class="van-cell-text">{{question.content}}</view>
+        </view>
+      </VanCell>
+    </block>
+  </VanCellGroup>
+  <van-divider contentPosition="center">到底啦~~~</van-divider>
+</view>
+
+
+
+<!-- <van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o">常见问题</van-tabbar-item>
+  <van-tabbar-item icon="comment-o">反馈</van-tabbar-item>
+  <van-tabbar-item icon="records">记录</van-tabbar-item>
+</van-tabbar> -->

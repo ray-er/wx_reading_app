@@ -1,7 +1,8 @@
 import regeneratorRuntime from './runtime.js'
 
-const baseUrl = 'http://127.0.0.1:3000/';
-
+// const baseUrl = 'http://127.0.0.1:3000/';
+const baseUrl = 'http://192.168.0.104:3000/';
+// const baseUrl = 'http://120.27.230.250:3000/';
 const wxRequest = async (api, params = {}) => {
   Object.assign(params, {
     token: wx.getStorageSync('token')

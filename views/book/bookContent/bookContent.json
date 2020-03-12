@@ -5,6 +5,7 @@
     "VanSlider":"../../../vant-weapp/slider",
     "VanButton":"../../../vant-weapp/button",
     "VanTransition":"../../../vant-weapp/transition",
-    "VanIcon":"../../../vant-weapp/icon"
+    "VanIcon":"../../../vant-weapp/icon",
+    "VanToast":"../../../vant-weapp/toast"
   }
 }

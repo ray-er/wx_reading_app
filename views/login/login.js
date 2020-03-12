@@ -32,12 +32,13 @@ Page({
       },
       method:'POST'
     })
-    console.log(ret)
+    console.log()
     // 存储相应数据到本地缓存。
     const {openid,session_key} = ret.data
     wx.setStorageSync('openid', openid)
     wx.setStorageSync('token', session_key)
     app.globalData.userInfo = userInfo
+    console.log(userInfo)
   },
   /**
    * 生命周期函数--监听页面加载

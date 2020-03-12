@@ -1,2 +1,35 @@
-<!--views/user/userSet/setAbout/setAbout.wxml-->
-<text>views/user/userSet/setAbout/setAbout.wxml</text>
+<view class="about-wrap">
+  <view class="base-content">
+    <view class="img">
+      <VanImage src="" width="100"
+        height="100" />
+    </view>
+    <view class="content">
+      <view>版本：1.0</view>
+      <view>发布时间：2020.03.10</view>
+    </view>
+  </view>
+  <VanCellGroup title="常用">
+    <VanCell title="功能介绍" value=""  size="large" 
+          bind:click="showFunction" is-link icon="volume-o" />
+    <VanCell title="我要吐槽" value="" size="large"  bind:click="showPopup" icon="smile-comment-o" is-link />
+  </VanCellGroup>
+</view>
+
+<VanDialog id="dialogFunction" />
+<VanPopup
+  show="{{ show }}"
+  closeable
+  position="bottom"
+  custom-style="height: 43%;"
+  bind:close="onClose"
+>
+    <view class="flex-r common-box"><VanIcon name="clear" size="50rpx" catchtap="close" /></view>
+    <view class="area-box" style="">
+      <textarea placeholder="请尽情吐槽..." name="textarea" maxlength="120" focus="{{true}}" />
+    </view>
+    <view class="btn-wrap">
+      <view style="display:flex">体验指数：<VanRate value="{{ rate }}" bind:change="onChange" /></view> 
+      <VanButton bindtap="commitDiss" >发表</VanButton>
+    </view>
+</VanPopup>

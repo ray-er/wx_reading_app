@@ -20,14 +20,13 @@
           <view class="content">
             {{item.comment_content}}
           </view>
-          <view class="bottom">
+          <!-- <view class="bottom">
             <view class="lighten">
               <van-icon name="good-job-o" wx:if="{{!item.flagLighten}}"/>
               <van-icon name="good-job" color="red" wx:else />
               {{item.goodNum}}
-            </view>
-            
-          </view>
+            </view>    
+          </view> -->
         </view>
       </view>
     </block>

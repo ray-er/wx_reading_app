@@ -14,20 +14,6 @@ Component({
     commentList:{
       type:Array,
       value:[
-        {
-          nickname:'30',
-          avatarUrl:'http://localhost:3000/wxda7c6c9805840a1a.o6zAJs0Jh56Gh-BQV_4p12dkgCbA.lQyFhn11nxXJ134168645b00bcdfe250fce939e0c488.png',
-          comment_time:'2020/02/13',
-          comment_content:'哈哈fdfdfdfadsfdasfdsfdsgfgfd哈哈哈哈fdfdfdfadsfdasfdsfdsgfgfd哈哈哈哈fdfdfdfadsfdasfdsfdsgfgfd哈哈',
-          goodNum:1
-        },
-        {
-          nickname:'30',
-          avatarUrl:'http://localhost:3000/wxda7c6c9805840a1a.o6zAJs0Jh56Gh-BQV_4p12dkgCbA.lQyFhn11nxXJ134168645b00bcdfe250fce939e0c488.png',
-          comment_time:'2020/02/13',
-          comment_content:'哈哈fdfdfdfadsfdasfdsfdsgfgfd哈哈哈哈fdfdfdfadsfdasfdsfdsgfgfd哈哈哈哈fdfdfdfadsfdasfdsfdsgfgfd哈哈',
-          goodNum:2
-        }
       ]
     }
   },
@@ -59,14 +45,14 @@ Component({
       let comment_content = this.data._myComment
       let story_id = this.data.story_id
       console.log(app.globalData.userInfo)
-      let {nickName:nickname,avatarUrl} = app.globalData.userInfo
+      let {nickName,avatarUrl} = app.globalData.userInfo
       let res = await wxRequest('story/sendComment',{
         method:'POST',
         data:{
           comment_content,
           openid,
           story_id,
-          nickname,
+          nickName,
           avatarUrl
         },
         hideLoading:true

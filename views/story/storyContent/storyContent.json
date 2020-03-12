@@ -1,5 +1,9 @@
 {
   "usingComponents": {
-    "Comment":"../../../components/Comment/Comment"
+    "Comment":"../../../components/Comment/Comment",
+    "StoryBottomTool":"../../../components/StoryBottomTool/StoryBottomTool",
+    "VanIcon":"../../../vant-weapp/icon",
+    "Dialog":"../../../vant-weapp/dialog",
+    "Toast":"../../../vant-weapp/toast"
   }
 }

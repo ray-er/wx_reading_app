@@ -57,8 +57,8 @@
        <view class="title">目录</view>
        <view class="catalog-list">
         <block wx:for="{{chapterList}}" wx:key="*this">
-          <view class="catalog-list-item" bindtap="toPointChapter"
-            data-chapterIndex="{{index+1}}"> 
+          <view class="catalog-list-item {{content_id==index+1?'activeClass':''}}" bindtap="toPointChapter"
+            data-chapterIndex="{{index+1}}" > 
             <view class="chapter-index">{{index+1}}.</view> 
             <view class="chapter-name">{{item.chapter_name}}</view>
           </view>
@@ -93,3 +93,4 @@
       </view>
     </view>
   </BottomTool>
+  <VanToast id="toast-progress" />

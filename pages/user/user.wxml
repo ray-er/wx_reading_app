@@ -1,21 +1,20 @@
 <!--pages/user/user.wxml-->
 <import src="../../templates/ScrollBar/ScrollBar.wxml" />
 <VanNoticeBar text="{{noticeContent}}" left-icon="volume-o"   mode="closeable" />
-<!-- <template is="ScrollBar"
-      data="{{scrollBarList}}"
-></template> -->
+
 <view class="avator-wrap">
-  <image class="avator" src="{{avatarUrl}}"></image>
+  <VanImage src="{{avatarUrl}}" width="60" height="60" round />
 </view>
 <VanCellGroup title="基本信息">
-  <VanCell title="用户昵称" value="{{nickName}}"  size="large"/>
-  <VanCell title="性别" value="{{gender}}"  size="large"/>
-  <VanCell title="地址" value="{{address}}"  size="large"/>
+  <VanCell title="用户昵称" value="{{nickName}}" icon="user-o"  size="large"></VanCell>
+  <VanCell title="性别" value="{{gender}}" icon="fire-o" size="large"></VanCell>
+  <VanCell  value="{{province+city}}" title="地址" icon="home-o"  size="large"></VanCell>
 </VanCellGroup>
 <VanCellGroup title="其它">
   <!-- <VanCell title="编辑信息" value="" size="large" is-link  link-type="navigateTo"
       url="/views/user/userSet" /> -->
-  <VanCell title="编辑信息" value=""  size="large" is-link
-        bind:click="toEditPage" />
-  <VanCell title="设置" value="" size="large" is-link   bind:click="toSetPage" />
+  <VanCell icon="edit" link-type="navigateTo" size="large" is-link bind:click="toEditPage">
+      <view slot="title">编辑信息</view>      
+  </VanCell>
+  <VanCell title="设置" value="" size="large" is-link   bind:click="toSetPage" icon="setting-o"></VanCell>
 </VanCellGroup>

@@ -3,13 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "dependencies": {
-    "vant-weapp": "^0.5.27"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpgg/wx_reading_app.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bpgg/wx_reading_app/issues"
+  },
+  "homepage": "https://github.com/bpgg/wx_reading_app#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.0.7"
+  }
 }

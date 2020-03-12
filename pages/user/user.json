@@ -3,7 +3,9 @@
     "VanNoticeBar":"../../vant-weapp/notice-bar",
     "UserItem":"../../components/UserItem/UserItem",
     "VanButton":"../../vant-weapp/button",
-    "VanCell":"../../miniprogram_npm/vant-weapp/cell",
-    "VanCellGroup":"../../vant-weapp/cell-group"
+    "VanCell":"../../vant-weapp/cell",
+    "VanCellGroup":"../../miniprogram_npm/@vant/weapp/cell-group",
+    "VanIcon":"../../miniprogram_npm/@vant/weapp/icon",
+    "VanImage":"../../miniprogram_npm/@vant/weapp/image"
   }
 }

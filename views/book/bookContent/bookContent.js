@@ -3,6 +3,7 @@ import {wxRequest} from "../../../utils/request";
 import regeneratorRuntime, { async } from '../../../utils/runtime'
 import {renewObject} from '../../../utils/util';
 import Dialog from '../../../vant-weapp/dialog/dialog';
+import Toast from '../../../vant-weapp/toast/toast';
 Page({
 
   /**
@@ -24,17 +25,27 @@ Page({
     // book
     bookData:{
       book_id:'book1',
-      book_name:'斗破苍穹斗破苍穹斗破苍穹',
-      author:'天蚕土豆',
-      book_tip:'猜您喜欢',
-      book_coverImage:"../../assets/coverImg/cover.png",
+      book_name:'',
+      author:'',
+      book_tip:'',
+      book_coverImage:"",
       book_introduction:'',
       category:'',
     },
     // flag
     flagFirstLoad:true,
-    flagShowDesc:true
+    flagShowDesc:true,
+    // 页面高度以及最后读取的章节。
+    bookScrollTop:0,
+    destChapter:1
   },
+  // 获取滚动条高度，做阅读器功能
+onPageScroll:function(e){
+    console.log('scrollTop'+e.scrollTop) //这个就是滚动到的位置,可以用这个位置来写判断
+    this.setData({
+      bookScrollTop:e.scrollTop
+    })
+ },
   // bookDesc
   showIntroDialog(){
     let _ = this
@@ -57,7 +68,8 @@ Page({
     let ret= wxRequest('book/getBookDetail',{
       data:{
         book_id:book_id
-      }
+      },
+      hideLoading:true
     })
     return ret
   },
@@ -65,7 +77,9 @@ Page({
     let currentContentId = this.data.content_id;
     let contentID = currentContentId -1<0?0:currentContentId -1;
     this.setData({
-      content_id:contentID
+      content_id:contentID,
+      destChapter:content_id,
+      bookScrollTop:0
     })
     this.onShow()
   },
@@ -74,7 +88,9 @@ Page({
     let currentContentId = this.data.content_id
     currentContentId = currentContentId+ 1>len?len:currentContentId+1;
     this.setData({
-      content_id:currentContentId
+      content_id:currentContentId,
+      destChapter:currentContentId,
+      bookScrollTop:0
     })
     this.onShow();
   },
@@ -82,16 +98,37 @@ Page({
     let contentID =  e.currentTarget.dataset.chapterindex;
     this.setData({
       content_id:contentID,
-      flagShowCatalog:false
+      flagShowCatalog:false,
+      destChapter:contentID,
+      bookScrollTop:0
     })
     this.onShow()
   },
-  startReading(){
+  async startReading(){
+    let openid = wx.getStorageSync('openid')
+    let book_id = this.data.bookData.book_id;
+    let content_id = 1,bookScrollTop = 0;
+    let progress = await this.getProgress(openid,book_id);
+    if(progress){
+      content_id = progress.destChapter;
+      bookScrollTop  = progress.bookScrollTop;
+      // 添加提示
+      Toast({
+        context:this,
+        selector:'#toast-progress',
+        message:'将自动跳转到您上次阅读的地方!'
+      })
+    }
     this.setData({
-      content_id:1,
+      content_id:content_id,
+      bookScrollTop:bookScrollTop,
       flagShowDesc:false
     })
-    this.onShow()
+    var _this = this
+    setTimeout(()=>{
+      _this.onShow();
+    },1000)
+    // this.onShow()
   },
   changeFontSize(e){
     let percent = e.detail;
@@ -99,28 +136,13 @@ Page({
       sliderValue:e.detail,
       fontSize:26 + percent*20/100
     })
-    // 计算属性，限定最大，最小值。
-    // let {clientX} = e.touches[0]
-    // // 60vw 375*0.6 225
-    // // 375 - 225 = 150 ,75
-    // let percent =  (clientX - 75)/225*100
-    // if(percent>=100){
-    //   percent = 100;
-    // }else if(percent<=0){
-    //   percent = 0;
-    // }
-    // console.log(percent)
-    // this.setData({
-    //   dotLeft:percent,
-    //   fontSize:26 + percent * 20 / 100
-    // })
-    // console.log(clientX)
   },
   async getChapterList(chapter_id){
     var ret = await wxRequest('book/getChapterList',{
       data:{
         chapter_id:chapter_id
-      }
+      },
+      hideLoading:true
     })
     return ret;
     
@@ -129,22 +151,42 @@ Page({
     var ret = await wxRequest('book/getChapterContent',{
       data:{
         chapter_id:chapter_id,
-        chapter_contentID:chapter_contentID
-      }
+        chapter_contentID:chapter_contentID,
+      },
+      hideLoading:true
     })
     return ret;
   },
+  async getProgress(openid,book_id){
+    let data = await wxRequest('book/getProgress',{
+      data:{
+        openid:openid,
+        book_id:book_id
+      },
+      hideLoading:true
+    })
+    return data.progress[0]
+  },
   onLoad: async function (options) {
+    console.log('load')
     // 加载列表，加载第一页的数据。
     let {book_id,chapter_id} = options
-    console.log(options)
+    let openid = wx.getStorageSync('openid')
+    let progress = await this.getProgress(openid,book_id)
+    let bookScrollTop = 0
+    let content_id = 1;
+    if(progress){
+      content_id = progress.destChapter
+      bookScrollTop = progress.bookScrollTop
+       console.log(content_id)
+    }
+    console.log(progress)
     let bookData = await this.getBookDetail(book_id);
   
     let chapterList = await this.getChapterList(chapter_id);
     
-
-    let chapterContent = await this.getChapterContent(chapter_id,1)
-
+    let chapterContent = await this.getChapterContent(chapter_id,content_id)
+    console.log(chapterContent)
     let {chapter_content='',chapter_name='', chapter_contentID=1}  = chapterContent.content
 
     this.setData({
@@ -171,9 +213,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow:async function () {
+    console.log('show')
     let current_content_id = this.data.content_id;
     let book_chapterID = this.data.chapter_id;
-    
+    let bookScrollTop = this.data.bookScrollTop
+    console.log('current_content_id'+current_content_id)
     if(this.data.flagFirstLoad) {
       this.setData({
         flagFirstLoad:false
@@ -189,7 +233,7 @@ Page({
       })
       // 回到顶部
       wx.pageScrollTo({
-        scrollTop: 0
+        scrollTop: bookScrollTop
       })
     }
   },
@@ -198,14 +242,31 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log('hide')
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
+  onUnload:async function () {
+      // 保存book_id,content_id,对应的高度
+      let {bookScrollTop,content_id,bookData} = this.data
+      console.log(bookScrollTop,content_id,bookData.book_id)
+      let requestData = {
+        bookScrollTop:bookScrollTop,
+        destChapter:content_id,
+        book_id:bookData.book_id,
+        openid :wx.getStorageSync('openid')
+      }
+      console.log(requestData)
+      let data = await wxRequest('book/saveProgress',{
+        method:'post',
+        data:requestData,
+        hideLoading:true
+      })
+      console.log(data)
+      // 发送给服务端
+      // 
   },
 
   /**

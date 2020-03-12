@@ -9,9 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    nickName:"30",
-    gender:'男',
-    address:'广东汕头',
+    nickName:"",
+    gender:'',
+    city:'',
+    province:'',
+    address:'',
     flagShowArea:false,
     areaList:{
       province_list: {
@@ -37,7 +39,7 @@ Page({
         // ....
       }
     },
-    avatarUrl:'https://img.yzcdn.cn/vant/cat.jpeg'
+    avatarUrl:''
 
   },
   async _getUserInfo(){
@@ -59,19 +61,19 @@ Page({
       gender:e.detail
     })
   },
+ 
   async updateUserInfo(){
-    let {gender,nickName} = this.data
-    console.log(nickName)
     let openid = wx.getStorageSync('openid')
-    const data = await wxRequest('user/wx_updateUserInfo',{
+    let {city,province,gender,nickName} = this.data;
+    await wxRequest('user/wx_updateUserInfo',{
       method:'post',
       data:{
-        gender:gender,
-        nickName:nickName,
-        openid:openid
+        gender,
+        nickName,
+        city,province,
+        openid
       }
     })
-    // console.log(data)
   },
   async severeMsg(){
     this.updateUserInfo()
@@ -94,9 +96,9 @@ Page({
   },
   selectAddress(e){
     let values = e.detail.values
-    let add = values[0].name+values[1].name
     this.setData({
-      address:add,
+      province:values[0].name,
+      city:values[1].name,
       flagShowArea:false
     })
   },
@@ -106,16 +108,16 @@ Page({
   onLoad: async function (options) {
     // 初始化本地数据。
     let userInfo = await this._getUserInfo();
-    console.log('----')
     console.log(userInfo)
-    let {gender,nickName,avatarUrl} = userInfo
+    let {gender,nickName,avatarUrl,city,province} = userInfo
     gender= (gender==1)?'男':'女'
     
     this.setData({
       areaList:_areaList,
-      avatarUrl:avatarUrl,
-      gender:gender,
-      nickName:nickName
+      avatarUrl,
+      gender,
+      nickName,
+      city,province
     })
   },
 

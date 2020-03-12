@@ -5,7 +5,8 @@
     "BottomTool":"../../components/BottomTool/BottomTool",
     "MySwiper":"../../components/MySwiper/MySwiper",
     "MyScrollBar":"../../components/MyScrollBar/MyScrollBar",
-    "SearchBar":"../../components/SearchBar/SearchBar"
+    "SearchBar":"../../components/SearchBar/SearchBar",
+    "van-button":"../../miniprogram_npm/@vant/weapp/button"
     
   }
 }

@@ -1,3 +1,14 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "VanCellGroup":"../../../../vant-weapp/cell-group",
+    "VanCell":"../../../../vant-weapp/cell",
+    "VanDialog":"../../../../vant-weapp/dialog",
+    "VanPopup":"../../../../vant-weapp/popup",
+    "VanField":"../../../../vant-weapp/field",
+    "VanButton":"../../../../vant-weapp/button",
+    "VanRate":"../../../../vant-weapp/rate",
+    "VanIcon":"../../../../vant-weapp/icon",
+    "VanImage":"../../../../miniprogram_npm/@vant/weapp/image"
+  },
+  "navigationBarTitleText":"关于读书app"
 }

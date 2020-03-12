@@ -1,18 +1,18 @@
 {
   "pages": [
     "pages/more/more",
-    "views/login/login",
-    "pages/store/store",
     "views/story/storyContent/storyContent",
+    "views/login/login",
+    "views/user/userSet/setHelp/setHelp",
+    "pages/user/user",
+    "views/user/userSet/setAbout/setAbout",
     "pages/index/index",
+    "views/book/bookContent/bookContent",
+    "pages/store/store",
     "views/user/userEdit/userEdit",
     "views/user/userEdit/userAvatar/userAvatar",
-    "views/book/bookContent/bookContent",
-    "pages/user/user",
     "views/search/searchResult/searchResult",
-    "views/user/userSet/userSet",
-    "views/user/userSet/setAbout/setAbout",
-    "views/user/userSet/setHelp/setHelp"
+    "views/user/userSet/userSet"
   ],
   "window": {
     "backgroundTextStyle": "light",

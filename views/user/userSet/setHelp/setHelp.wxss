@@ -1,1 +1,19 @@
 /* views/user/userSet/setHelp/setHelp.wxss */
+.a-wrap{
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 9999;
+}
+.a-wrap .back{
+  padding: 20rpx 30rpx;
+}
+.a-wrap .title{
+  padding: 0 5% 20rpx;
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+}

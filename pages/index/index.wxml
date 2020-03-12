@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<!-- <van-button type="danger">123213</van-button> -->
 <view class="index-wrap">
   <MySwiper _swiperConfig="{{swiperConfig}}"/>
   <SearchBar _top="300" />

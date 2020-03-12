@@ -43,7 +43,9 @@ Component({
    */
   methods: {
     init(){
+
       let keywords = wx.getStorageSync('keywords');
+      if(!keywords) wx.setStorageSync('keywords', [])
       let _top = this.data._top;
       this.setData({
         searchHistoryWords:keywords,
@@ -53,7 +55,7 @@ Component({
     },
     focusWidth(){
       let _top = this.data._top
-      console.log(_top)
+      // console.log(_top)
       this.setData({
         _searchBarWidth:'85vw',
         _btnLeft:'0',
@@ -79,6 +81,8 @@ Component({
       if(keywords.indexOf(keyword)===-1){
         // 错误
         // wx.setStorageSync('keywords', keywords.push(keyword))
+        console.log(keyword)
+        console.log(keywords)
         keywords[keywords.length] = keyword
         wx.setStorageSync('keywords', keywords)
         this.init()

@@ -21,20 +21,18 @@
       value="{{ nickName }}"
       placeholder="{{nickName}}"
       border="{{ false }}"
-      bind:change="onChange"
       bind:input="updateNickName"
     />
     <VanField
       label="性别"
       value="{{ gender }}"
-      placeholder="{ gender }}"
+      placeholder="{{gender}}"
       border="{{ false }}"
-      bind:change="onChange"
       bind:input="updateGender"
     />
     <VanField
       label="地址"
-      value="{{ address }}"
+      value="{{ province+city }}"
       readonly
       placeholder="{{ address }}"
       border="{{ false }}"

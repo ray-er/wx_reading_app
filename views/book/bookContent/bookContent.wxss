@@ -98,7 +98,7 @@
 .prev-btn::before,.prev-btn::after{
   content: '';
   position: absolute;
-  background-color: rgb(25, 137, 250);
+  background-color: #4e3a3a;
   width: 20rpx;
   height: 2rpx;
   transform: rotate(45deg);
@@ -156,4 +156,7 @@
   justify-content: center;
   background-color: #440e25;
   z-index: 2;
+}
+.activeClass{
+  color: red;
 }

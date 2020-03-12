@@ -1,0 +1,30 @@
+<!--components/StoryBottomTool/StoryBottomTool.wxml-->
+<view class="tool-wrap">
+    <view class="left">
+      <van-icon wx:if="{{hasLike}}" name="like" size="40rpx" color="red" catchtap="reomveLike"/>
+      <van-icon wx:else name="like-o" size="40rpx"  catchtap="confirmLike"/>
+    </view>  
+    <view class="right">
+      <view class="star">
+        <van-icon wx:if="{{hasStar}}" name="star" size="40rpx" color="#ffe100" catchtap="reomveStar" />
+        <van-icon wx:else name="star-o" size="40rpx" catchtap="confirmStar"/>
+      </view>
+      <view class="comment" catchtap="showCommentBox">
+        <van-icon name="comment-o" size="40rpx" info="{{comment_num}}"/>
+      </view>
+    </view>
+</view>
+<!-- 提示-确认收藏 -->
+<van-toast id="van-toast-confirmLike" />
+<!-- 评论模块 -->
+<van-transition show="{{ flagShowComment }}"  name="slide-down">
+  <view class="comment-wrap">
+    <view class="comment-title">
+      <view class="left"> <view class="text">评论区</view> </view>
+      <view class="right" catchtap="sortByGood">
+        <view class="text"> 亮度排序 </view>
+        <image class="img" src="../../assets/icons/sort.png"></image>
+      </view>
+    </view>
+  </view>
+</van-transition>

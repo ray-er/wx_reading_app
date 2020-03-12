@@ -1,3 +1,17 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "VanCellGroup":"../../../../vant-weapp/cell-group",
+    "VanButton":"../../../../vant-weapp/button",
+    "VanCell":"../../../../vant-weapp/cell",
+    "van-collapse":"../../../../miniprogram_npm/@vant/weapp/collapse",
+    "van-collpase-item":"../../../../miniprogram_npm/@vant/weapp/collapse-item",
+    "van-image":"../../../../miniprogram_npm/@vant/weapp/image",
+    "van-divider":"../../../../miniprogram_npm/@vant/weapp/divider",
+    "van-tabbar":"../../../../miniprogram_npm/@vant/weapp/tabbar",
+    "van-tabbar-item":"../../../../miniprogram_npm/@vant/weapp/tabbar-item",
+    "van-icon":"../../../../miniprogram_npm/@vant/weapp/icon",
+    "van-transition":"../../../../miniprogram_npm/@vant/weapp/transition",
+    "van-steps":"../../../../miniprogram_npm/@vant/weapp/steps"
+  },
+  "navigationBarTitleText": "帮助"
 }
